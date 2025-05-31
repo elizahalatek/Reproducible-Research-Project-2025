@@ -378,7 +378,7 @@ ggplot(clean_job_sat, aes(x = nacer2, fill = stfmjob, group = stfmjob)) +
 # --- model formulas ---
 
 formula_2 <-
-  stfmjob_grouped ~  happy + inprdsc + health + hlthhmp + rlgdgr + 
+  as.numeric(stfmjob_grouped) ~  happy + inprdsc + health + hlthhmp + rlgdgr + 
   brncntr + gndr + agea + rshpsts + edulvlb +
   eduyrs + uempla + uempli + rtrd + hswrk + emplrel +
   wrkctra + estsz + wkdcorga + wkhtot + tporgwk +
@@ -391,6 +391,13 @@ lmmodel<-lm(formula_2,data=clean_job_sat, weights = anweight)
 summary(lmmodel)
 
 # --- ordered logit models ---
+formula_2 <-
+  stfmjob_grouped ~  happy + inprdsc + health + hlthhmp + rlgdgr + 
+  brncntr + gndr + agea + rshpsts + edulvlb +
+  eduyrs + uempla + uempli + rtrd + hswrk + emplrel +
+  wrkctra + estsz + wkdcorga + wkhtot + tporgwk +
+  uemp3m + hinctnta + atncrse  + trdawrk + jbprtfp +
+  pfmfdjba + dcsfwrka + nacer2 + domicil + hincsrca + emprelp
 
 ologit <- polr(formula_2, data=clean_job_sat)
 ologitr <- ologit.reg(formula_2, data=clean_job_sat)
