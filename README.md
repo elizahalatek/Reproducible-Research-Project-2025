@@ -25,6 +25,37 @@ The aim of this project is to **reproduce and extend** a previous job satisfacti
 
 ---
 
+## Libraries Used
+
+The analysis relies on several Python libraries for data handling, modeling, and visualization:
+
+### Data Handling
+- `pandas` – for data manipulation and cleaning
+- `numpy` – for numerical operations
+
+### Visualization
+- `matplotlib.pyplot` – for basic plotting
+- `seaborn` – for enhanced visualizations and statistical plots
+
+### Statistical Modeling
+- `statsmodels` – for linear regression, probit and ordered logit models, marginal effects, and VIFs
+- `mord` – for ordinal regression (LogisticAT model)
+- `scipy` – for statistical tests including chi-squared
+
+### Machine Learning Utilities
+- `scikit-learn`:
+  - `preprocessing.OrdinalEncoder` – to encode ordinal features
+  - `compose.ColumnTransformer` – to apply preprocessing
+  - `pipeline.make_pipeline` – for building ML pipelines
+  - `model_selection.train_test_split` – to split datasets
+  - `linear_model.LogisticRegression` – for comparison models
+  - `metrics` – for model evaluation (accuracy, log loss)
+
+### Others
+- `warnings` – to manage warning messages and ensure cleaner outputs
+
+---
+
 ## Repository Structure
 
 | File                                            | Description                                                                                                               |
